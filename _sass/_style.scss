@@ -1,0 +1,119 @@
+code
+{
+    font-family: monospace;    
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #555;
+}
+
+footer.site-footer{
+    border: none;
+}
+
+footer.site-footer div.footer-col-wrapper > div:last-child
+{
+    text-align: right;
+}
+
+footer.site-footer .footer-col-wrapper{
+    color: white;
+}
+
+footer.site-footer .footer-col-wrapper a{
+    color: #FFD300;
+}
+
+ footer.site-footer .footer-col-wrapper a svg path{
+     fill: white;
+ }
+
+.site-header{
+    border: none;
+    background-color: #4B5E51;
+    color: white;
+}
+
+.site-header .page-link, .site-header .site-title{
+    color: white;
+}
+
+.site-header .site-title .logo{
+    height: 40px;
+    position: relative;
+    top: -2px;
+}
+
+.page-content{
+    background-color: #f9fff9;
+}
+
+.home-page-content{
+    background-color: #FFD300;
+    color: white;
+}
+
+.home-page-content .hero{
+    padding: 130px 30px;
+    text-align: center;
+}
+
+.home-page-content .hero h1{
+    font-size: 23px;
+    line-height: 1.2em;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+}
+
+.home-page-content .hero h1 a{
+    font-weight: 400;
+    color: white;
+}
+
+.home-page-content .hero .logo{
+    height: 300px;
+    margin-bottom: 8px;
+}
+
+a, a:visited, a:hover, a:active{
+    color: #2E90CC;
+}
+
+ul.pluginlist{
+    list-style: none;
+    margin: 8px 0;
+}
+
+ul.pluginlist li{
+    border-radius: 6px;
+    background-color: white;
+    margin: 8px 0;
+    padding: 6px;
+    border: 1px solid #f4f4f4;
+}
+
+@include media-query($on-palm) {
+    .site-header .page-link{
+        color: white;
+    }
+    .site-nav .menu-icon > svg path{
+        fill: #FFD300;
+    }
+    
+    .home-page-content .hero{
+        padding: 55px 20px;
+    }
+    
+    .home-page-content .hero .logo{
+        height: 120px;
+        margin-bottom: 18px;
+    }
+    
+    div.footer-col-wrapper > div:last-child
+    {
+        text-align: left;
+    }
+}
+
+
+

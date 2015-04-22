@@ -1,0 +1,11 @@
+# Site settings
+title: Armstrong
+email: armstrong@rocketmakers.com
+description: Armstrong is a CSS library
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.rocketmake.org" # the base hostname & protocol for your site
+twitter_username: armstrongcss
+github_username:  rocketmakers
+
+# Build settings
+markdown: kramdown
