@@ -4,17 +4,18 @@ title: Documentation
 permalink: /docs/
 ---
 
-## Armstrong
+# Armstrong
 
 Armstrong is a lightweight modular CSS framework written in SASS. It is designed to be none invasive to help you out at the start but not be a nightmare when you want to add your own designs (like certain other frameworks...)
 
-To get started, check out <http://getrocketmake.com>!
+To get started, check out <http://armstrong.org>!
 
 ## Table of contents
 
-- [Structure & Modules](#modules)
+- [Structure & Modules](#structures-&-modules)
+- [Customization](#customization)
+- [Third party components](#third-party-components)
 - [Bugs and feature requests](#bugs-and-feature-requests)
-- [Documentation](#documentation)
 - [Contributing](#contributing)
 - [Community](#community)
 - [Versioning](#versioning)
@@ -23,7 +24,7 @@ To get started, check out <http://getrocketmake.com>!
 
 ## Structure & Modules
 
-Armstrong is designed to be incredibly modular. If you dont need something, like tables for example, just dont include it! 
+Armstrong is designed to be fully modular. If you dont need something, like tables for example, just dont include it! 
 
 Below is a breakdown of the structure
 
@@ -47,8 +48,7 @@ style/
     │   ├── _tables.scss
     │   └── _typography.scss
     ├── armstrong.scss
-    └── armstrong.css
-	
+    └── armstrong.css	
 ```
 
 #### _base.scss
@@ -103,60 +103,49 @@ Again, self explanatory. Provides some less hideuos defaults for tables cross br
 
 This gives you some nice defaults for typography elements (p, span, code, h1, h2, h3, .date, .author etc)
 
-### What's included
 
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+## Customization
 
+To customize Armstrong, you just need to crack open the armstrong.scss file and comment/remove the modules you dont need. For example here is the default with all the dumbbells and whistles
 ```
-rocketmake/
-├── css/
-│   ├── rocketmake.css
-│   ├── rocketmake.css.map
-│   ├── rocketmake.min.css
-│   ├── rocketmake-theme.css
-│   ├── rocketmake-theme.css.map
-│   └── rocketmake-theme.min.css
-├── js/
-│   ├── rocketmake.js
-│   └── rocketmake.min.js
-└── fonts/
-	├── glyphicons-halflings-regular.eot
-	├── glyphicons-halflings-regular.svg
-	├── glyphicons-halflings-regular.ttf
-	├── glyphicons-halflings-regular.woff
-	└── glyphicons-halflings-regular.woff2
+// REQUIRED IMPORTS
+@import "modules/base";
+
+// OPTIONAL IMPORTS
+@import "modules/fonts";
+@import "modules/typography";
+@import "modules/forms";
+@import "modules/tables";
+@import "modules/lists";
+@import "modules/buttons";
+@import "modules/cards";
 ```
+And here is it configured without tables or cards
+```
+// REQUIRED IMPORTS
+@import "modules/base";
 
-We provide compiled CSS and JS (`rocketmake.*`), as well as compiled and minified CSS and JS (`rocketmake.min.*`). CSS [source maps](https://developers.google.com/chrome-developer-tools/docs/css-preprocessors) (`rocketmake.*.map`) are available for use with certain browsers' developer tools. Fonts from Glyphicons are included, as is the optional rocketmake theme.
+// OPTIONAL IMPORTS
+@import "modules/fonts";
+@import "modules/typography";
+@import "modules/forms";
+//@import "modules/tables";
+@import "modules/lists";
+@import "modules/buttons";
+//@import "modules/cards";
+```
+Just be sure never to remove the `modules/base` import or you're gonna have a bad time.
 
+## Third party components
+Armstrong uses a couple of amazing components from other authors
+- Font Awesome by Dave Gandy - http://fontawesome.io
+- Normalize.css by [Nicolas Gallagher](http://nicolasgallagher.com/), co-created with [Jonathan Neal](http://music.thewikies.com/jonneal/).
 
+Huge thanks to these guys for writing libraries I could not live without :)
 
 ## Bugs and feature requests
 
 Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/twbs/rocketmake/blob/master/CONTRIBUTING.md#using-the-issue-tracker) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/twbs/rocketmake/issues/new).
-
-
-## Documentation
-
-rocketmake's documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://getrocketmake.com>. The docs may also be run locally.
-
-### Running documentation locally
-
-1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) (requires v2.5.x).
-  - **Windows users:** Read [this unofficial guide](http://jekyll-windows.juthilo.com/) to get Jekyll up and running without problems.
-2. Install the Ruby-based syntax highlighter, [Rouge](https://github.com/jneen/rouge), with `gem install rouge`.
-3. From the root `/rocketmake` directory, run `jekyll serve` in the command line.
-4. Open <http://localhost:9001> in your browser, and voilà.
-
-Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com/docs/home/).
-
-### Documentation for previous releases
-
-Documentation for v2.3.2 has been made available for the time being at <http://getrocketmake.com/2.3.2/> while folks transition to rocketmake 3.
-
-[Previous releases](https://github.com/twbs/rocketmake/releases) and their documentation are also available for download.
-
-
 
 ## Contributing
 
