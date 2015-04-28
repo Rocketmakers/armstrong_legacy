@@ -108,7 +108,7 @@ This gives you some nice defaults for typography elements (p, span, code, h1, h2
 
 To customize Armstrong, you just need to crack open the armstrong.scss file and comment/remove the modules you dont need. For example here is the default with all the dumbbells and whistles
 
-```
+```scss
 // REQUIRED IMPORTS
 @import "modules/base";
 
@@ -124,7 +124,7 @@ To customize Armstrong, you just need to crack open the armstrong.scss file and 
 
 And here is it configured without tables or cards
 
-```
+```scss
 // REQUIRED IMPORTS
 @import "modules/base";
 
