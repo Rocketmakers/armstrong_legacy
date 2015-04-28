@@ -8,4 +8,4 @@ twitter_username: armstrongcss
 github_username:  rocketmakers
 
 # Build settings
-markdown: kramdown
+markdown: GFM
