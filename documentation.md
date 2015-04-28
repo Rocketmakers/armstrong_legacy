@@ -124,7 +124,7 @@ To customize Armstrong, you just need to crack open the armstrong.scss file and 
 
 And here is it configured without tables or cards
 
-```css
+```scss
 // REQUIRED IMPORTS
 @import "modules/base";
 
