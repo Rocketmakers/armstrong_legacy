@@ -309,11 +309,20 @@ pre {
       .post-content h4 {
         font-size: 18px; } }
 
+/** Theme Variables **/
+/** **/
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  line-height: 1.5;
+  color: #777; }
+
 code {
   font-family: monospace; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #555; }
+  color: #555;
+  font-weight: 400; }
 
 footer.site-footer {
   border: none; }
@@ -377,10 +386,10 @@ ul.pluginlist {
 
 ul.pluginlist li {
   border-radius: 6px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
   margin: 8px 0;
   padding: 6px;
-  border: 1px solid #f4f4f4; }
+  border: 1px solid rgba(0, 0, 0, 0.05); }
 
 @media screen and (max-width: 600px) {
   .site-header .page-link {
@@ -393,10 +402,10 @@ ul.pluginlist li {
     padding: 55px 20px; }
 
   .home-page-content .hero .logo {
-    height: 120px;
+    height: 180px;
     margin-bottom: 18px; }
 
-  div.footer-col-wrapper > div:last-child {
+  footer.site-footer div.footer-col-wrapper > div:last-child {
     text-align: left; } }
 /**
  * Syntax highlighting styles

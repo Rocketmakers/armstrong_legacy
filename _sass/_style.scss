@@ -1,10 +1,36 @@
+/** Theme Variables **/
+
+$branding-primary-color: #4B5E51;
+$branding-secondary-color: #FFD300;
+$branding-tertiary-color: #CCCCCC;
+
+$base-heading-color: #555;
+$base-body-color: #777;
+
+$base-font-family: 'Raleway', sans-serif;
+$base-font-size: 16px;
+$base-font-weight: 200; 
+$base-line-height: 1.5;
+
+
+
+/** **/
+
+body{
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	line-height: $base-line-height;
+	color: $base-body-color;
+}
+
 code
 {
     font-family: monospace;    
 }
 
 h1,h2,h3,h4,h5,h6{
-    color: #555;
+    color: $base-heading-color;
+    font-weight: $base-font-weight + 200;
 }
 
 footer.site-footer{
@@ -21,7 +47,7 @@ footer.site-footer .footer-col-wrapper{
 }
 
 footer.site-footer .footer-col-wrapper a{
-    color: #FFD300;
+    color: $branding-secondary-color;
 }
 
  footer.site-footer .footer-col-wrapper a svg path{
@@ -30,7 +56,7 @@ footer.site-footer .footer-col-wrapper a{
 
 .site-header{
     border: none;
-    background-color: #4B5E51;
+    background-color: $branding-primary-color;
     color: white;
 }
 
@@ -49,7 +75,7 @@ footer.site-footer .footer-col-wrapper a{
 }
 
 .home-page-content{
-    background-color: #FFD300;
+    background-color: $branding-secondary-color;
     color: white;
 }
 
@@ -86,10 +112,10 @@ ul.pluginlist{
 
 ul.pluginlist li{
     border-radius: 6px;
-    background-color: white;
+    background-color: rgba(255,255,255,0.3);
     margin: 8px 0;
     padding: 6px;
-    border: 1px solid #f4f4f4;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 @include media-query($on-palm) {
@@ -97,7 +123,7 @@ ul.pluginlist li{
         color: white;
     }
     .site-nav .menu-icon > svg path{
-        fill: #FFD300;
+        fill: $branding-secondary-color;
     }
     
     .home-page-content .hero{
@@ -105,11 +131,11 @@ ul.pluginlist li{
     }
     
     .home-page-content .hero .logo{
-        height: 120px;
+        height: 180px;
         margin-bottom: 18px;
     }
     
-    div.footer-col-wrapper > div:last-child
+    footer.site-footer div.footer-col-wrapper > div:last-child
     {
         text-align: left;
     }
