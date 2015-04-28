@@ -142,7 +142,7 @@ Just be sure never to remove the `modules/base` import or you're gonna have a ba
 
 ## Third party components
 Armstrong uses a couple of amazing components from other authors
-- Font Awesome by Dave Gandy - http://fontawesome.io
+- Font Awesome by [Dave Gandy](http://fontawesome.io)
 - Normalize.css by [Nicolas Gallagher](http://nicolasgallagher.com/), co-created with [Jonathan Neal](http://music.thewikies.com/jonneal/).
 
 Huge thanks to these guys for writing libraries I could not live without :)
