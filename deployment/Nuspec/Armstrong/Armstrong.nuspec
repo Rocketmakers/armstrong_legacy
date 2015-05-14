@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Armstrong</id>
+        <version>0.1.0</version>
+        <authors>Rocketmakers Ltd.</authors>
+        <description>CSS library</description>
+        <copyright>Copyright 2015</copyright>
+        <tags>armstrong html5 css3</tags>
+    </metadata>
+     <files>
+        <file src="source\modules\_reset.scss" target="Content\Content\style\armstrong\modules\_reset.scss" />
+        <file src="source\modules\_settings.scss" target="Content\Content\style\armstrong\modules\_settings.scss" />
+        <file src="source\modules\_mixins.scss" target="Content\Content\style\armstrong\modules\_mixins.scss" />
+        <file src="source\modules\_forms.scss" target="Content\Content\style\armstrong\modules\_forms.scss" />
+        <file src="source\modules\_grid.scss" target="Content\Content\style\armstrong\modules\_grid.scss" />
+        <file src="source\modules\_buttons.scss" target="Content\Content\style\armstrong\modules\_buttons.scss" />
+        <file src="source\modules\_tables.scss" target="Content\Content\style\armstrong\modules\_tables.scss" />
+        <file src="source\modules\_scaffold.scss" target="Content\Content\style\armstrong\modules\_scaffold.scss" />
+        <file src="source\modules\_fonts.scss" target="Content\Content\style\armstrong\modules\_fonts.scss" />
+        <file src="source\modules\_typography.scss" target="Content\Content\style\armstrong\modules\_typography.scss" />
+        <file src="source\modules\_cards.scss" target="Content\Content\style\armstrong\modules\_cards.scss" />
+        <file src="source\modules\_imagebox.scss" target="Content\Content\style\armstrong\modules\_imagebox.scss" />
+        <file src="source\modules\_lists.scss" target="Content\Content\style\armstrong\modules\_lists.scss" />
+        <file src="source\modules\_base.scss" target="Content\Content\style\armstrong\modules\_base.scss" />
+        <file src="source\armstrong.scss" target="Content\Content\style\armstrong\armstrong.scss" />
+      </files>
+</package>

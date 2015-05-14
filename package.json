@@ -1,0 +1,17 @@
+{
+  "name": "Armstrong",
+  "version": "0.1.0",
+  "dependencies": {
+    "del": "^1.1.1",
+    "glob": "^5.0.5",
+    "gulp": "^3.8.11",
+    "gulp-zip": "^3.0.2",
+    "merge-stream": "^0.1.7",
+    "underscore": "^1.8.3",
+    "yargs": "^3.8.0",
+    "rocketmake": "^0.1.0",
+    "rocketmake-logger-teamcity": "^0.1.0",
+    "rocketmake-nuget": "^0.1.0",
+    "rocketmake-semver": "^0.1.0"
+  }
+}

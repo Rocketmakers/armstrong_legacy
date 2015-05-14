@@ -1,0 +1,44 @@
+﻿@import "settings";
+@import "mixins";
+
+/* IMAGE BOX */
+.image-box {
+    @include box-sizing;
+    padding: 5px;
+    display: inline-block;
+    float: left;
+    position: relative;
+    width: 20%;
+
+    img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    /* Smartphone view: 1 tile */
+    .image-box {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) and (min-width: 461px) {
+    /* Tablet view: 2 tiles */
+    .image-box {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1050px) and (min-width: 651px) {
+    /* Small desktop / ipad view: 3 tiles */
+    .image-box {
+        width: 33.3%;
+    }
+}
+
+@media only screen and (max-width: 1290px) and (min-width: 1051px) {
+    /* Medium desktop: 4 tiles */
+    .image-box {
+        width: 25%;
+    }
+}

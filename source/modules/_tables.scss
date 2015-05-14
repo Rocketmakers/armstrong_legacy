@@ -1,0 +1,39 @@
+@import "settings";
+@import "mixins";
+
+table {
+    width: 100%;
+    border: 1px solid $table_border-color;
+}
+
+th {
+    background: $theme-color;
+    padding: 10px;
+    color: $theme-color / 3;
+    border: 1px solid $theme-color / 1.1;
+    font-weight: normal;
+    font-size: 10pt;
+    text-align: left;
+}
+
+td {
+    border: 1px solid $theme-color / 1.1;
+    border-bottom: none;
+    border-top: none;
+    @include box-sizing;
+    padding: 10px;
+    font-size: 10pt;
+}
+
+.bordered {
+
+    td {
+        border: 1px solid $table_border-color;
+    }
+}
+
+.striped {
+    tr:nth-child(even) {
+        background: $theme-color;
+    }
+}

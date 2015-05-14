@@ -1,0 +1,90 @@
+@import "settings";
+@import "mixins";
+
+.site
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header,
+footer
+{
+    flex: none;
+}
+main
+{
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+nav
+{
+    width: 100%;
+    height: 30px;
+
+    a
+    {
+        @include box-sizing;
+        padding: 10px;
+        padding-left: 0px;
+        padding-right: 20px;
+        text-decoration: none;
+        color: $theme-color / 3;
+        &:hover{
+            color: $theme-color / 2;
+        }
+    }
+}
+
+/* MICRO CLEAR FIX*/
+.cf:before,
+.cf:after
+{
+    content: " ";
+    display: table;
+}
+
+.cf:after
+{
+    clear: both;
+}
+
+.cf
+{
+    *zoom: 1;
+}
+
+.width-wrapper
+{
+    @include box-sizing;
+    margin: 0px auto;
+    width: $global_min-site-width;
+    position: relative;
+}
+
+.float-left
+{
+    float: left;
+}
+
+.float-right
+{
+    float: right;
+}
+
+.align-left
+{
+    text-align: left;
+}
+
+.align-right
+{
+    text-align: right;
+}
+
+.align-center
+{
+    text-align: center;
+}

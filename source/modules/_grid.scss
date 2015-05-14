@@ -1,0 +1,87 @@
+﻿@import "settings";
+@import "mixins";
+
+$grid_single-column-width: 100% / $grid_column-count;
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.grid
+{
+    @extend .cf;
+    @include box-sizing;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $grid_max-width;
+    display: block;
+}
+
+.row
+{
+    @extend .cf;
+    white-space: nowrap;
+}
+
+%col
+{
+    @include box-sizing;
+    max-width: $grid_max-width;
+    overflow: hidden;
+    white-space: normal;
+    height: 100%;
+    display: inline-block;
+    min-height: 1px;
+    float: left;
+}
+
+@for $i from 1 through $grid_column-count
+{
+    $calculatedWidth: $grid_single-column-width * $i;
+
+    .col#{$i}
+    {
+        @extend %col;
+        width: $calculatedWidth;
+        min-width: $calculatedWidth;
+    }
+}
+
+.grid
+{
+    &.borders
+    {
+        .row > div
+        {
+            border: 1px dashed rgba(0,0,0,0.3);
+        }
+    }
+
+    &.padded
+    {
+        .row > div
+        {
+            padding: 10px;
+        }
+    }
+
+    &.padded-inner
+    {
+        .row > div
+        {
+            padding: 10px 5px;
+        }
+        .row > div:first-of-type {padding-left:0px; padding-right:10px}
+        .row > div:last-of-type {padding-right:0px; padding-left:10px}
+    }
+}
