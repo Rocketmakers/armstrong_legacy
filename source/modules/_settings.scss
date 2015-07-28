@@ -1,33 +1,4 @@
-/* GLOBAL */
-$global_min-mobile-width: 600px;
-$global_min-site-width: 960px;
-$global_responsive: true;
-
-/* FORM CONTROLS */
-$form_input-height: 40px;
-$form_border-brush: #d4d4d4;
-
-$form_compact-input-width: 200px;
-
-$form_input-width: 300px;
-$form_label-width: 130px;
-
-/* GRID */
-$grid_max-width: $global_min-site-width;
-$grid_column-count: 12;
-$grid_cell-padding: 10px;
-
-/* COLORS */
-$theme-color: #efefef;
-$text_body-color: #666666;
-$text_placeholder-color: transparentize($text_body-color, 0.4);
-
-/* NAVIGATION */
-$nav_height: 45px;
-$color_navigation-menu: darken(#2B71B7, 10);
-
-/* TABLES */
-$table_header-color: $theme-color;
-$table_header-text-color: white;
-$table_border-color: #d7d7d7;
-$table_stripe-color: #f6f6f6;
+// THESE ARE JUST SOME SHARED DEFAULTS USED THROUGOUT ARMSTRONG. IT'S ADVISED NOT TO BE EDITING THESE, AS THE RESULTS COULD BE UNPREDICTABLE.
+$theme-color: #6C6C70;
+$positive-color: #45D564;
+$negative-color: #EA4E4E;

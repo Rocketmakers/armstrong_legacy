@@ -1,227 +1,180 @@
 @import "settings";
-@import "mixins";
+@import "utilities";
 
-input[type='text'],
-input[type='password'],
-input[type='number'],
-textarea
-{
-    @include box-sizing;
-    background-color: white;
-    color: $text_body-color;
-    border-radius: 0;
-    border: 1px solid $form_border-brush;
-    padding-left: 10px;
-    padding-right: 10px;
-    min-height: $form_input-height;
-    width: 100%;
-    margin-bottom: 10px;
-}
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"]{
+	height: 45px;
+	padding: 10px;
+	color: $theme-color;
+	border: 1px solid $theme-color*1.75;
+	margin: 0;
+	
+	$placeholder-color: transparentize($theme-color, 0.6);
+	
+	&::-webkit-input-placeholder {
+   		color: $placeholder-color;
+	}
 
-input[type='text'],
-input[type='password'],
-input[type='number']
-{
-    height: $form_input-height;
-}
+	&:-moz-placeholder { /* Firefox 18- */
+   		color: $placeholder-color; 
+	}
 
-.prepend-input
-{
-    position: relative;
+	&::-moz-placeholder {  /* Firefox 19+ */
+   		color: $placeholder-color; 
+	}
 
-    input
-    {
-        padding-left: 40px;
-    }
-}
-
-.prepend-icon
-{
-    @include box-sizing;
-    border-radius: 0;
-
-    i
-    {
-        color: $text_body-color * 1.3;
-        text-align: center;
-        line-height: 33px;
-    }
-
-    text-align: center;
-    height: $form_input-height;
-    line-height: $form_input-height;
-    width: 30px;
-    border: 1px solid $form_border-brush;
-    background: $form_border-brush / 1.05;
-    position: absolute;
-}
-
-textarea
-{
-    padding: 10px;
-    min-height: $form_input-height * 3;
-}
-
-::-webkit-input-placeholder
-{
-    color: $text_placeholder-color;
-}
-
-:-moz-placeholder
-{
-    /* Firefox 18- */
-    color: $text_placeholder-color;
-}
-
-::-moz-placeholder
-{
-    /* Firefox 19+ */
-    color: $text_placeholder-color;
-}
-
-:-ms-input-placeholder
-{
-    color: $text_placeholder-color !important;
-}
-
-
-
-// CHECKBOX/RADIO
-input[type='checkbox'],
-input[type='radio']
-{
-    display: none;
-}
-
-    input[type='checkbox'] + label,
-    input[type='radio'] + label
-    {
-        left: 50px;
-        width: auto;
-        position: relative;
-        height: $form_input-height;
-        line-height: 40px;
-        display: inline-block;
-        font-size: 10pt;
-        margin-bottom: 10px;
-
-        &:before
-        {
-            font-family: "FontAwesome";
-            color: $text_body-color;
-            content: ' ';
-            height: $form_input-height - 2;
-            width: $form_input-height;
-            background: white;
-            border-radius: 0;
-            border: 1px solid $form_border-brush;
-            position: absolute;
-            left: -50px;
-            top: 0px;
-            text-align: center;
-            font-size: 16pt;
-            margin-bottom: 10px;
-        }
-    }
-
-
-
-input[type='checkbox'],
-input[type='radio']
-{
-    &:disabled + label
-    {
-        opacity: 0.5;
-    }
-}
-
-    input[type='checkbox']:checked + label,
-    input[type='radio']:checked + label
-    {
-        &:before
-        {
-            content: '\f00c';
-        }
-    }
-
-    input[type='radio'] + label
-    {
-        left: 35px;
-        line-height: 25px;
-        margin-right: 50px;
-        cursor: pointer;
-
-        &:before
-        {
-            @include box-sizing;
-            height: 25px;
-            width: 25px;
-            line-height: 24px;
-            border-radius: 100px;
-            font-size: 13pt;
-            left: -35px;
-            padding-left: 0px;
-        }
-    }
-
-    input[type='radio']:checked + label
-    {
-        &:before
-        {
-            content: '\f111';
-            color: $theme-color / 2;
-        }
-    }
-
-.labels-left label
-{
-    display: inline-block;
-    width: 145px;
-    line-height: 40px;
-}
-
-.labels-left input
-{
-    width: calc(100% - 150px);
-}
-
-.labels-left button
-{
-    margin-left: 148px;
-    width: calc(100% - 150px);
-}
-
-.labels-left .no-label
-{
-    margin-left: 148px;
-}
-
-.form-box
-{
-    border-radius: 0;
-    border: 1px solid $theme-color / 1.2;
-    background-color: white;
-    margin-bottom: 10px;
-    input{
-        border: none;
-        margin: 0;
-        border-bottom: 1px solid $theme-color;
-    }
-
-    input:last-of-type{
-        border: none;
-    }
+	&:-ms-input-placeholder {  
+   		color: $placeholder-color;  
+	}	
 }
 
 .form{
-    &.button-center{
-        .button, button{
-            margin: 0px auto;
-        }
-    }
-    &.button-stretch{
-        .button, button{
-            width: 100%;
-        }
-    }
+	
+	.form-row{
+		display: -webkit-flex;
+		display: flex;
+		margin-bottom: 15px;
+		position: relative;
+	}
+	label{
+		flex: none;
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-basis: 125px;
+	}
+	input{
+		flex: 2;
+	}
+	
+	&.labels-above{
+		.form-row{
+			display: block;
+			label{
+				display: block;
+				margin-bottom: 5px;
+			}
+			input{
+				width: 100%;
+			}
+		}
+	}
+}
+
+.checkbox{
+	position: relative;
+	display: inline-block;
+	label{
+		flex: none;		
+		display: flex !important;
+		flex-direction: column;
+		justify-content: center;
+		flex-basis: 125px;
+		margin-right: 10px;
+	}
+}
+
+input[type="checkbox"],
+input[type="radio"],
+{
+	display: none;
+	&+label{		
+		padding-left: 55px;
+		height: 45px;
+		&:after{
+			background-color: white;
+			content: '\f00c';	
+			font-family: 'fontawesome';
+			text-align: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 1px solid $theme-color*1.75;
+			line-height: 45px;			
+			height: 45px;			
+			width: 45px;
+			font-size: 20pt;
+			color: transparent;
+			transition: color 0.1s;
+		}			
+	}
+	
+	&:checked{
+		&+label:after{
+			content: '\f00c';	
+			color: $theme-color / 1.5;
+		}
+	}
+}
+
+input[type="radio"]
+{
+	&+label:after{
+		border-radius: 50%;
+	}
+	&:checked{
+		&+label:after{
+			content: '\f111';	
+			font-size: 23pt;
+			color: $theme-color / 1.5;
+		}
+	}
+}
+
+.button-input{
+	display: -webkit-flex;
+		display: flex;
+	input{
+		flex: 1;
+	}
+	button{
+		flex: none;
+	}
+}
+
+.prefix-input{
+	display: -webkit-flex;
+	display: flex;
+	input{
+		flex: 1;
+		padding-left: 5px;
+	}
+	div{
+		flex: none;
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 10px;
+		padding-right: 5px;
+		border: 1px solid $theme-color*1.75;
+		border-right: none;
+		color: $theme-color;
+	}
+}
+
+.suffix-input{
+	display: -webkit-flex;
+	display: flex;
+	input{
+		flex: 1;
+		padding-right: 5px;
+		text-align: right;
+	}
+	div{
+		flex: none;
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-right: 10px;
+		padding-left: 5px;
+		border: 1px solid $theme-color*1.75;
+		border-left: none;
+		color: $theme-color;
+	}
 }

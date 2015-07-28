@@ -1,87 +1,76 @@
-﻿@import "settings";
-@import "mixins";
-
-$grid_single-column-width: 100% / $grid_column-count;
-
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+.grid{
+	&.fill-container{
+		height: 100%;
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+	}
+	.row{
+		flex: 1;
+		display: -webkit-flex;
+		display: flex;
+		&>div{
+			overflow: hidden;
+		}
+		.col{
+			-webkit-flex: 1;
+			flex: 1;			
+			&.fixed{
+				flex: none;
+			}
+			&.center-content{
+				display: -webkit-flex;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
+			}
+		}		
+	}
+	
+	&.padded{
+		.row > div{
+			padding: 10px;
+		}
+	}
+	&.padded-inner{
+		.row > div{
+			padding: 10px 5px;
+		}
+		.row > div:first-of-type {
+			padding-left:0px; padding-right:10px
+		} 
+        .row > div:last-of-type {
+			padding-right:0px; padding-left:10px
+		}
+	}
+	&.borders{
+		.row > div{
+		border: 1px solid $theme-color;
+		}
+		.row > div:first-of-type {
+			border-left-width: 2px;
+		} 
+        .row > div:last-of-type {
+			border-right-width: 2px;
+		}		
+		.row:first-of-type > div{
+			border-top-width: 2px;
+		}		
+		.row:last-of-type > div{
+			border-bottom-width: 2px;
+		}
+	}
 }
 
-.cf:after {
-    clear: both;
-}
-
-.cf {
-    *zoom: 1;
-}
-
-.grid
-{
-    @extend .cf;
-    @include box-sizing;
-    margin: 0 auto;
-    width: 100%;
-    max-width: $grid_max-width;
-    display: block;
-}
-
-.row
-{
-    @extend .cf;
-    white-space: nowrap;
-}
-
-%col
-{
-    @include box-sizing;
-    max-width: $grid_max-width;
-    overflow: hidden;
-    white-space: normal;
-    height: 100%;
-    display: inline-block;
-    min-height: 1px;
-    float: left;
-}
+$grid_column-count: 12;
 
 @for $i from 1 through $grid_column-count
 {
-    $calculatedWidth: $grid_single-column-width * $i;
-
     .col#{$i}
     {
-        @extend %col;
-        width: $calculatedWidth;
-        min-width: $calculatedWidth;
+        -webkit-flex: $i;
+        flex: $i;
     }
 }
 
-.grid
-{
-    &.borders
-    {
-        .row > div
-        {
-            border: 1px dashed rgba(0,0,0,0.3);
-        }
-    }
-
-    &.padded
-    {
-        .row > div
-        {
-            padding: 10px;
-        }
-    }
-
-    &.padded-inner
-    {
-        .row > div
-        {
-            padding: 10px 5px;
-        }
-        .row > div:first-of-type {padding-left:0px; padding-right:10px}
-        .row > div:last-of-type {padding-right:0px; padding-left:10px}
-    }
-}

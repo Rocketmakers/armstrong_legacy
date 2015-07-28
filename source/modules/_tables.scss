@@ -1,26 +1,25 @@
 @import "settings";
-@import "mixins";
 
 table {
     width: 100%;
-    border: 1px solid $table_border-color;
+    border: 1px solid $theme-color / 2;
 }
 
 th {
-    background: $theme-color;
+    background: $theme-color * 1.2;
     padding: 10px;
     color: $theme-color / 3;
     border: 1px solid $theme-color / 1.1;
     font-weight: normal;
     font-size: 10pt;
     text-align: left;
+    color: white;
 }
 
 td {
     border: 1px solid $theme-color / 1.1;
     border-bottom: none;
     border-top: none;
-    @include box-sizing;
     padding: 10px;
     font-size: 10pt;
 }
@@ -28,12 +27,13 @@ td {
 .bordered {
 
     td {
-        border: 1px solid $table_border-color;
+        border: 1px solid $theme-color / 2;
     }
 }
 
 .striped {
-    tr:nth-child(even) {
-        background: $theme-color;
+    tr:nth-child(odd) {
+        background:rgba(0,0,0,0.1);
     }
 }
+
