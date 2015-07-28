@@ -31,36 +31,35 @@ input[type="date"]{
 	}	
 }
 
-.form{
-	
+.form{	
 	.form-row{
-		display: -webkit-flex;
-		display: flex;
+		display: block;
 		margin-bottom: 15px;
-		position: relative;
-	}
-	label{
-		flex: none;
-		display: -webkit-flex;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		flex-basis: 125px;
-	}
-	input{
-		flex: 2;
-	}
-	
-	&.labels-above{
-		.form-row{
+		label{
 			display: block;
-			label{
-				display: block;
-				margin-bottom: 5px;
-			}
-			input{
-				width: 100%;
-			}
+			margin-bottom: 5px;
+		}
+		input{
+			width: 100%;
+		}
+	}
+	&.labels-left{
+		.form-row{
+			display: -webkit-flex;
+			display: flex;
+			margin-bottom: 15px;
+			position: relative;
+		}
+		label{
+			flex: none;
+			display: -webkit-flex;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			flex-basis: 125px;
+		}
+		input{
+			flex: 2;
 		}
 	}
 }
