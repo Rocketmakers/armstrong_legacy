@@ -10,7 +10,6 @@ html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  height: 100%;
 }
 
 /**
@@ -425,4 +424,13 @@ table {
 td,
 th {
   padding: 0;
+}
+
+html, body{
+	height: 100%;
+}
+
+*{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
