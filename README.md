@@ -27,17 +27,19 @@ Below is a breakdown of the structure
 style/
 └── armstrong/
     ├── modules/
-    │   ├── _base.scss
     │   ├── _buttons.scss
     │   ├── _cards.scss
     │   ├── _fonts.scss
     │   ├── _forms.scss
     │   ├── _grid.scss
-    │   ├── _imagebox.scss
+    │   ├── _dialog.scss
+    │   ├── _helpers.scss
     │   ├── _lists.scss
     │   ├── _mixins.scss
-    │   ├── _reset.scss
+    │   ├── _normalize.scss
+    │   ├── _navigation.scss
     │   ├── _scaffold.scss
+    │   ├── _progress.scss
     │   ├── _settings.scss
     │   ├── _tables.scss
     │   └── _typography.scss
@@ -45,13 +47,10 @@ style/
     └── armstrong.css	
 ```
 
-#### _base.scss
-
-This file is imported by bicep as a mandatory import. It contains base settings, [normalize](http://necolas.github.io/normalize.css/), the grid and some essential layout tools for bicep
 
 #### _buttons.scss
 
-Self explanatory really. Adds some plain sensible cross browser defaults for button controls. This includes button, submit and any element with class of button
+Self explanatory really. Adds some plain sensible cross browser defaults for button controls. This includes button and submit. The out of the box classes are 'positive' and 'negative', which are green and red respectively.
 
 #### _cards.scss
 
@@ -63,31 +62,39 @@ Overides base font with one from Google Fonts (open sans by default). Change thi
 
 #### _grid.scss
 
-This file is imported by bicep (via _base) as a mandatory import. It provides a flexible grid based layout for your site.
-
-#### _imagebox.scss
-
-This gives you a responsive 5 column image gallery
+This file is imported by bicep (via _base) as a mandatory import. It provides a flexible grid based layout for your site. The new version uses flexbox, so make sure you're not targeting old browsers
 
 #### _lists.scss
 
-Provides block and wrap styles for Uls. Handy for bootstrapping of linear lists.
+Handy for bootstrapping of linear lists.
 
 #### _mixins.scss
 
-This file is imported by bicep (via _base) as a mandatory import. It provides utilities for use in SCSS files
+This file is used by various files across armstrong. Nothing exciting here!
 
-#### _reset.scss
+#### _normalize.scss
 
-This file is imported by bicep (via _base) as a mandatory import. It is just the latest from [normalize](http://necolas.github.io/normalize.css/).
+This file is imported by armstrong as a mandatory import. It is just the latest from [normalize](http://necolas.github.io/normalize.css/).
 
 #### _scaffold.scss
 
-This file is imported by bicep (via _base) as a mandatory import. This provides some helpers including the microclearfix and widthwrapper classes.
+This provides some defaults for layout out pages. Strongly reccomended if you want to use headers and footers (sticky or otherwise) without any hassle.
 
 #### _settings.scss
 
-Provides base settings for all the rest of bicep. Feel free to tweak this to your needs, but its always better just to override anything you want to change yourself in your own CSS.
+Provides base settings for all the rest of armstrong. You can change these if you want, but it's better just to override later yourself if you want to.
+
+#### _progress.scss
+
+New in V2! Gives you a nice spinner along with a determinate/indeterminate progress bar.
+
+#### _navigation.scss
+
+New in V2! If you use a nav with some a tags, you'll get a nice looking nav without any messing about.
+
+#### _dialog.scss
+
+New in V2! All you need to show pure css dialogs. Again, made for minimal hassle.
 
 #### _tables.scss
 
