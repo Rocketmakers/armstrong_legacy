@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Armstrong</id>
-        <version>0.1.0</version>
+        <version>2.0.1</version>
         <authors>Rocketmakers Ltd.</authors>
         <description>CSS library</description>
         <copyright>Copyright 2015</copyright>
@@ -10,16 +10,18 @@
     </metadata>
      <files>
         <file src="source\modules\_normalize.scss" target="Content\Content\style\armstrong\modules\_normalize.scss" />
-        <file src="source\modules\_fonts.scss" target="Content\Content\style\armstrong\modules\_fonts.scss" /> 
-        <file src="source\modules\_helpers.scss" target="Content\Content\style\armstrong\modules\_helpers.scss" /> 
-        <file src="source\modules\_forms.scss" target="Content\Content\style\armstrong\modules\_forms.scss" /> 
-        <file src="source\modules\_lists.scss" target="Content\Content\style\armstrong\modules\_lists.scss" /> 
-        <file src="source\modules\_tables.scss" target="Content\Content\style\armstrong\modules\_tables.scss" /> 
-        <file src="source\modules\_cards.scss" target="Content\Content\style\armstrong\modules\_cards.scss" /> 
-        <file src="source\modules\_typography.scss" target="Content\Content\style\armstrong\modules\_typography.scss" /> 
-        <file src="source\modules\_buttons.scss" target="Content\Content\style\armstrong\modules\_buttons.scss" /> 
-        <file src="source\modules\_grid.scss" target="Content\Content\style\armstrong\modules\_grid.scss" /> 
-        <file src="source\modules\_debug.scss" target="Content\Content\style\armstrong\modules\_debug.scss" /> 
+        <file src="source\modules\_fonts.scss" target="Content\Content\style\armstrong\modules\_fonts.scss" />
+        <file src="source\modules\_helpers.scss" target="Content\Content\style\armstrong\modules\_helpers.scss" />
+        <file src="source\modules\_progress.scss" target="Content\Content\style\armstrong\modules\_progress.scss" />
+        <file src="source\modules\_dialog.scss" target="Content\Content\style\armstrong\modules\_dialog.scss" />
+        <file src="source\modules\_forms.scss" target="Content\Content\style\armstrong\modules\_forms.scss" />
+        <file src="source\modules\_lists.scss" target="Content\Content\style\armstrong\modules\_lists.scss" />
+        <file src="source\modules\_tables.scss" target="Content\Content\style\armstrong\modules\_tables.scss" />
+        <file src="source\modules\_cards.scss" target="Content\Content\style\armstrong\modules\_cards.scss" />
+        <file src="source\modules\_typography.scss" target="Content\Content\style\armstrong\modules\_typography.scss" />
+        <file src="source\modules\_buttons.scss" target="Content\Content\style\armstrong\modules\_buttons.scss" />
+        <file src="source\modules\_grid.scss" target="Content\Content\style\armstrong\modules\_grid.scss" />
+        <file src="source\modules\_typography.scss" target="Content\Content\style\armstrong\modules\_typography.scss" />
         <file src="source\armstrong.scss" target="Content\Content\style\armstrong\armstrong.scss" />
       </files>
 </package>

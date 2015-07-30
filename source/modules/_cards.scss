@@ -1,63 +1,54 @@
-.card-view{
-    
-	.card-wrap{
-		width:  percentage(1/6);
-		flex: 1;		
-		float: left;
-        margin-bottom: 30px;
-        .card{
-            min-height: 350px;
-            max-width: 300px;
-            width: calc(100% - 30px);
-            background: rgba(0,0,0,0.1);
-            margin: 0px auto;
-            
-            .card-header{
-                width: 100%;
-                height: 150px;
-                background-position: center center;
-                background-size: cover;
-            }
-            .card-content{
-                padding: 20px;
-                padding-top: 0;
-            }
-        }
-	}
+.card-view {
+  .card-wrap {
+    width: percentage(1/6);
+    flex: 1;
+    float: left;
+    margin-bottom: 30px;
+    .card {
+      min-height: 350px;
+      max-width: 300px;
+      width: calc(100% - 30px);
+      background: rgba(0,0,0,0.1);
+      margin: 0 auto;
+      .card-header {
+        width: 100%;
+        height: 150px;
+        background-position: center center;
+        background-size: cover;
+      }
+      .card-content {
+        padding: 0 20px 20px;
+      }
+    }
+  }
 }
-
-
 @media only screen and (max-width: 460px) {
-    /* Smartphone view: 1 tile */
-    .card-wrap {
-        width: 100% !important;
-    }
+  /* Smartphone view: 1 tile */
+  .card-wrap {
+    width: 100% !important;
+  }
 }
-
 @media only screen and (max-width: 650px) and (min-width: 461px) {
-    /* Tablet view: 2 tiles */
-    .card-wrap {
-        width: 50% !important;
-    }
+  /* Tablet view: 2 tiles */
+  .card-wrap {
+    width: 50% !important;
+  }
 }
-
 @media only screen and (max-width: 1050px) and (min-width: 651px) {
-    /* Small desktop / ipad view: 3 tiles */
-    .card-wrap {
-        width: 33.3% !important;
-    }
+  /* Small desktop / ipad view: 3 tiles */
+  .card-wrap {
+    width: 33.3% !important;
+  }
 }
-
 @media only screen and (max-width: 1390px) and (min-width: 1051px) {
-    /* Medium desktop: 4 tiles */
-    .card-wrap {
-        width: 25% !important;
-    }
+  /* Medium desktop: 4 tiles */
+  .card-wrap {
+    width: 25% !important;
+  }
 }
-
 @media only screen and (max-width: 1920px) and (min-width: 1391px) {
-    /* Medium desktop: 4 tiles */
-    .card-wrap {
-        width: percentage(1/6) !important;
-    }
+  /* Large desktop: 5 tiles */
+  .card-wrap {
+    width: percentage(1/6) !important;
+  }
 }

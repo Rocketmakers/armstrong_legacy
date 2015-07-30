@@ -1,0 +1,40 @@
+@import "settings";
+*{
+  color: $text-color;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+  &.responsive {
+    .width-wrapper {
+      width: 100%;
+    }
+  }
+}
+header,
+footer {
+  flex: none;
+}
+header {
+  height: $header-height;
+  background: rgba(0,0,0,0.75);
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main {
+  flex: 1 0 auto;
+}
+body.sticky-header {
+  padding-top: $header-height;
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+  }
+}

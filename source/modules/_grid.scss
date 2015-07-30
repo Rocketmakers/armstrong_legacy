@@ -1,76 +1,76 @@
-.grid{
-	&.fill-container{
-		height: 100%;
-		display: -webkit-flex;
-		display: flex;
-		flex-direction: column;
-	}
-	.row{
-		flex: 1;
-		display: -webkit-flex;
-		display: flex;
-		&>div{
-			overflow: hidden;
-		}
-		.col{
-			-webkit-flex: 1;
-			flex: 1;			
-			&.fixed{
-				flex: none;
-			}
-			&.center-content{
-				display: -webkit-flex;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				text-align: center;
-			}
-		}		
-	}
-	
-	&.padded{
-		.row > div{
-			padding: 10px;
-		}
-	}
-	&.padded-inner{
-		.row > div{
-			padding: 10px 5px;
-		}
-		.row > div:first-of-type {
-			padding-left:0px; padding-right:10px
-		} 
-        .row > div:last-of-type {
-			padding-right:0px; padding-left:10px
-		}
-	}
-	&.borders{
-		.row > div{
-		border: 1px solid $theme-color;
-		}
-		.row > div:first-of-type {
-			border-left-width: 2px;
-		} 
-        .row > div:last-of-type {
-			border-right-width: 2px;
-		}		
-		.row:first-of-type > div{
-			border-top-width: 2px;
-		}		
-		.row:last-of-type > div{
-			border-bottom-width: 2px;
-		}
-	}
-}
-
-$grid_column-count: 12;
-
-@for $i from 1 through $grid_column-count
-{
-    .col#{$i}
-    {
-        -webkit-flex: $i;
-        flex: $i;
+.grid {
+  &.fill-container {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .row {
+    flex: 1;
+    display: -webkit-flex;
+    display: flex;
+    &>div {
+      overflow: hidden;
     }
+    .col {
+      -webkit-flex: 1;
+      flex: 1;
+      &.fixed {
+        flex: none;
+      }
+      &.center-content {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+  &.padded {
+    .row > div {
+      padding: 10px;
+    }
+  }
+  &.padded-inner {
+    .row > div {
+      padding: 10px 5px;
+    }
+    .row > div:first-of-type {
+      padding-left: 0;
+      padding-right: 10px;
+    }
+    .row > div:last-of-type {
+      padding-right: 0;
+      padding-left: 10px;
+    }
+    .col12 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &.borders {
+    .row > div {
+      border: 1px solid $theme-color;
+    }
+    .row > div:first-of-type {
+      border-left-width: 2px;
+    }
+    .row > div:last-of-type {
+      border-right-width: 2px;
+    }
+    .row:first-of-type > div {
+      border-top-width: 2px;
+    }
+    .row:last-of-type > div {
+      border-bottom-width: 2px;
+    }
+  }
 }
-
+$grid_column-count: 12;
+@for $i from 1 through $grid_column-count {
+  .col#{$i} {
+    -webkit-flex: $i;
+    flex: $i;
+  }
+}
