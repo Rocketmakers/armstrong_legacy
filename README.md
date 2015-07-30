@@ -28,6 +28,7 @@ Below is a breakdown of the structure
 style/
 └── armstrong/
     ├── modules/
+    │   ├── _base.scss
     │   ├── _buttons.scss
     │   ├── _cards.scss
     │   ├── _fonts.scss
@@ -48,6 +49,9 @@ style/
     └── armstrong.css	
 ```
 
+#### _base.scss
+
+The raw essentials for armstrong. I wouldn't reccomend removing this or anything it imports or you're gonna have a bad time. Includes the grid and some basic, sensible, hip & happening defaults.
 
 #### _buttons.scss
 
@@ -140,7 +144,7 @@ And here is it configured without tables or cards
 //@import "modules/cards";
 ```
 
-Just be sure never to remove the `modules/base` import or you're gonna have a bad time.
+Just be sure never to remove the `modules/base`, import or again, you're gonna have a bad time.
 
 ## Third party components
 Armstrong uses a couple of amazing components from other authors
