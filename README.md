@@ -1,3 +1,5 @@
+
+![Armstrong CSS](http://armstrongcss.org/assets/logolarge.svg)
 # Armstrong
 
 Armstrong is a lightweight modular CSS framework written in SASS. It is designed to be none invasive to help you out at the start but not be a nightmare when you want to add your own designs (like certain other frameworks...)
