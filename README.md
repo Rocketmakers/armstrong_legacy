@@ -3,7 +3,7 @@
 </p>
 Armstrong is a lightweight modular CSS framework written in SASS. It is designed to be none invasive to help you out at the start but not be a nightmare when you want to add your own look and feel (like certain other frameworks...)
 
-To get started, check out <http://armstrong.org>!
+To get started, check out <http://armstrongcss.org>!
 
 ## Table of contents
 
