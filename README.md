@@ -157,30 +157,19 @@ Huge thanks to these guys for writing libraries I could not live without :)
 
 Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/twbs/rocketmake/blob/master/CONTRIBUTING.md#using-the-issue-tracker) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/twbs/rocketmake/issues/new).
 
-## Contributing
-
-Please read through our [contributing guidelines](https://github.com/twbs/rocketmake/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
-
-Moreover, if your pull request contains JavaScript patches or features, you must include [relevant unit tests](https://github.com/twbs/rocketmake/tree/master/js/tests). All HTML and CSS should conform to the [Code Guide](https://github.com/mdo/code-guide), maintained by [Mark Otto](https://github.com/mdo).
-
-Editor preferences are available in the [editor config](https://github.com/twbs/rocketmake/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
-
 ## Community
 
 Keep track of development and community news.
 
-- Follow [@getrocketmake on Twitter](https://twitter.com/getrocketmake).
-- Read and subscribe to [The Official rocketmake Blog](http://blog.getrocketmake.com).
-- Implementation help may be found at Stack Overflow (tagged [`twitter-rocketmake-3`](http://stackoverflow.com/questions/tagged/twitter-rocketmake-3)).
-- Developers should use the keyword `rocketmake` on packages which modify or add to the functionality of rocketmake when distributing through [npm](https://www.npmjs.com/browse/keyword/rocketmake) or similar delivery mechanisms for maximum discoverability.
+- Follow [@rocketmakers on Twitter](https://twitter.com/rocketmakers).
+- Implementation help may be found at Stack Overflow (tagged [`armstrong-css`](http://stackoverflow.com/questions/tagged/armstrong-css)).
+- Developers should use the keyword `armstrong-css` on packages which modify or add to the functionality of Armstrong when distributing through [npm](https://www.npmjs.com/browse/keyword/rocketmake) or similar delivery mechanisms for maximum discoverability.
 
 
 
 ## Versioning
 
-For transparency into our release cycle and in striving to maintain backward compatibility, rocketmake is maintained under [the Semantic Versioning guidelines](http://semver.org/). Sometimes we screw up, but we'll adhere to those rules whenever possible.
+For transparency into our release cycle and in striving to maintain backward compatibility, Armstrong is maintained under [the Semantic Versioning guidelines](http://semver.org/). Sometimes we screw up, but we'll adhere to those rules whenever possible.
 
 
 
@@ -194,5 +183,5 @@ For transparency into our release cycle and in striving to maintain backward com
 
 ## Copyright and license
 
-Code and documentation copyright 2011-2015 Rocketmakers Ltd. Code released under [the MIT license](https://github.com/twbs/rocketmake/blob/master/LICENSE). Docs released under [Creative Commons](https://github.com/rckt/rocketmake/blob/master/docs/LICENSE).
+Code and documentation copyright 2011-2015 Rocketmakers Ltd. Code released under [the MIT license](https://github.com/twbs/armstrong/blob/master/LICENSE). Docs released under [Creative Commons](https://github.com/rckt/armstrong/blob/master/docs/LICENSE).
 
