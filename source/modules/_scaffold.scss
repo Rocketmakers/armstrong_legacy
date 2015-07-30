@@ -3,7 +3,7 @@
   color: $text-color;
 }
 
-body {
+body,.site {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -30,7 +30,7 @@ header {
 main {
   flex: 1 0 auto;
 }
-body.sticky-header {
+body.sticky-header, .site.sticky-header {
   padding-top: $header-height;
   header {
     position: fixed;

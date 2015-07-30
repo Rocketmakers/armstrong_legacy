@@ -72,5 +72,12 @@ $grid_column-count: 12;
   .col#{$i} {
     -webkit-flex: $i;
     flex: $i;
+    &.center-content {
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
