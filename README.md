@@ -51,7 +51,7 @@ style/
 
 #### _base.scss
 
-The raw essentials for armstrong. I wouldn't reccomend removing this or anything it imports or you're gonna have a bad time. Includes the grid and some basic, sensible, hip & happening defaults.
+The raw essentials for armstrong. I wouldn't reccomend removing this or anything it imports or you're gonna have a bad time. Includes the grid, fontawesome and some basic, sensible, hip & happening defaults.
 
 #### _buttons.scss
 
