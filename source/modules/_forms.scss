@@ -1,10 +1,15 @@
 @import "settings";
 @import "mixins";
+
+
+
+select,
 input[type="text"],
 input[type="number"],
 input[type="email"],
 input[type="password"],
 input[type="date"] {
+    -webkit-appearance: none;
   height: 45px;
   padding: 10px;
   color: $theme-color;
@@ -163,4 +168,21 @@ input[type="radio"] {
     border-left: none;
     color: $theme-color;
   }
+}
+
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+    outline: none;
+    box-shadow: none;
+    position: relative;
+    padding-right: 30px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 7px) center;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAjUlEQVR4nJXRsQnCUBCH8V/EAawsHME63RvB2mGsNBnAYSSFIGjnBq5ga2+jzQUe8UXINcfx/z6O46qUkik1m0SHcMcHDywHeY1X5MdeOEe4xi2TalywwBvXXmjRDKTNAN6ig3mAh+j7kLqYe/iU3yCTmmz+gfMNuQS7EgzVyB9WeJaCsT8U4X/CaE0WvhndGxaUOYzEAAAAAElFTkSuQmCC);
+}
+
+select::-ms-expand {
+    display: none;
 }

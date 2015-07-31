@@ -18,13 +18,6 @@
       &.fixed {
         flex: none;
       }
-      &.center-content {
-        display: -webkit-flex;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-      }
     }
   }
   &.padded {
@@ -67,17 +60,29 @@
     }
   }
 }
+
+.center-vertical {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+.center-horizonal {
+        text-align: center;
+}
+
+
+.center-both {
+        @extend .center-vertical;
+        @extend .center-horizonal;
+}
+
+
 $grid_column-count: 12;
 @for $i from 1 through $grid_column-count {
   .col#{$i} {
     -webkit-flex: $i;
     flex: $i;
-    &.center-content {
-      display: -webkit-flex;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
   }
 }

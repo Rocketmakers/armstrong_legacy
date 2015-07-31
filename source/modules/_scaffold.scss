@@ -20,12 +20,8 @@ footer {
 }
 header {
   height: $header-height;
-  background: rgba(0,0,0,0.75);
-  width: 100%;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background: rgba(0,0,0,0.5);
+    width: 100%;
 }
 main {
   flex: 1 0 auto;
