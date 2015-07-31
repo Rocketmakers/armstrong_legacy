@@ -45,18 +45,15 @@ input[type="date"] {
   }
   &.labels-left {
     .form-row {
+      display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
       margin-bottom: 15px;
       position: relative;
     }
     label {
-      flex: none;
-      display: -webkit-flex;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-basis: 125px;
+      @extend %align-center;   
+      min-width: 125px;
     }
     input {
       flex: 2;
@@ -67,10 +64,13 @@ input[type="date"] {
   position: relative;
   display: inline-block;
   label {
+      -ms-flex: none;
+    -webkit-flex: none;
     flex: none;
+      display: -ms-flexbox !important;
+      display: -webkit-flex !important;
     display: flex !important;
-    flex-direction: column;
-    justify-content: center;
+      @extend %align-center;
     flex-basis: 125px;
     margin-right: 10px;
   }
@@ -119,9 +119,12 @@ input[type="radio"] {
   }
 }
 .button-input {
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   input {
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
   }
   button {
@@ -129,18 +132,17 @@ input[type="radio"] {
   }
 }
 .prefix-input {
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   input {
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     padding-left: 5px;
   }
   div {
-    flex: none;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @extend %align-center;
     padding-left: 10px;
     padding-right: 5px;
     border: 1px solid $theme-color*1.75;
@@ -149,19 +151,18 @@ input[type="radio"] {
   }
 }
 .suffix-input {
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   input {
+    -ms-flex: 1;
+    -webkit-flex: 1;
     flex: 1;
     padding-right: 5px;
     text-align: right;
   }
-  div {
-    flex: none;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  div {    
+    @extend %align-center;   
     padding-right: 10px;
     padding-left: 5px;
     border: 1px solid $theme-color*1.75;

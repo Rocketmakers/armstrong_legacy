@@ -1,3 +1,5 @@
+@import "mixins";
+
 $dialog-header-height: 45px;
 .blackout {
   position: fixed;
@@ -7,11 +9,10 @@ $dialog-header-height: 45px;
   z-index: 255;
   top: 0;
   left: 0;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  @extend %align-center;
   opacity: 0;
   transition: opacity 0.2s;
   pointer-events: none;
