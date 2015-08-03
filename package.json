@@ -14,7 +14,7 @@
     "rocketmake-nuget": "^0.1.0",
     "rocketmake-semver": "^0.1.0"
   },
-  "description": "",
+  "description": "Armstrong is a lightweight css framework written in SASS",
   "main": "gulpfile.js",
   "devDependencies": {},
   "scripts": {
