@@ -1,6 +1,6 @@
 {
-  "name": "Armstrong",
-  "version": "0.1.0",
+  "name": "armstrong",
+  "version": "2.0.0",
   "dependencies": {
     "del": "^1.1.1",
     "glob": "^5.0.5",
@@ -13,5 +13,27 @@
     "rocketmake-logger-teamcity": "^0.1.0",
     "rocketmake-nuget": "^0.1.0",
     "rocketmake-semver": "^0.1.0"
-  }
+  },
+  "description": "<p align=\"center\">\r <img src=\"http://armstrongcss.org/assets/logolarge.svg\" width=\"256\" height=\"256\" />\r </p>\r Armstrong is a lightweight modular CSS framework written in SASS. It is designed to be none invasive to help you out at the start but not be a nightmare when you want to add your own look and feel (like certain other frameworks...)",
+  "main": "gulpfile.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rocketmakers/armstrong.git"
+  },
+  "keywords": [
+    "css",
+    "armstrong",
+    "rocketmakers",
+    "grid"
+  ],
+  "author": "Rocketmakers <adam@rocketmakers.com> (http://www.rocketmakers.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rocketmakers/armstrong/issues"
+  },
+  "homepage": "https://github.com/Rocketmakers/armstrong#readme"
 }
