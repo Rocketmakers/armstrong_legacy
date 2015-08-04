@@ -1,0 +1,302 @@
+---
+layout: full
+title: Grid Master
+permalink: /gridmaster/
+---
+
+<style type="text/css">
+.row {
+    position: relative;
+}
+.col {
+    position: relative;
+}
+.fill-container {
+    height: 100vh !important;
+}
+.col-functions {
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    text-transform: uppercase;
+    font-size: 8pt;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+.col-functions span {
+    color: white;
+}
+.col:hover > .col-functions {
+    opacity: 1;
+}
+.row:hover > .row-functions {
+    opacity: 1;
+}
+.row-functions {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    padding: 10px;
+    opacity: 0;
+}
+.row-functions label {
+    color: white;
+    text-transform: uppercase;
+    font-size: 8pt;
+    margin-right: 5px;
+}
+.row-functions button,
+.col-functions button {
+    width: auto;
+    height: auto;
+    text-transform: uppercase;
+    padding: 5px;
+    width: 22px !important;
+}
+.sidebar {
+    background-color: #303F35;
+    color: white;
+    padding: 10px;
+    padding-top: 0;
+    width: 300px;
+}
+.sidebar h1 {
+    color: white;
+    letter-spacing: -2px;
+    opacity: 0.7;
+    font-size: 34.5pt;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.sidebar button {
+    margin-top: 10px;
+}
+.sidebar p {
+    font-size: 7pt;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+.sidebar label{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+.darkinput {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none !important;
+    color: white !important;
+    width: 120px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    padding: 0 !important;
+}
+textarea {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none !important;
+    color: white !important;
+    padding: 5px !important;
+    font-size: 8pt;
+    font-family: consolas;
+    width: 100%;
+    height: 200px;
+}
+.no-content {
+    text-align: center;
+    padding-top: 100px;
+}
+.no-content b {
+    display: block;
+    margin-top: 10px;
+    font-size: 20pt;
+}
+.no-content i {
+    font-size: 72pt;
+}
+.no-content p {
+    margin: 0;
+    margin-top: 10px;
+}
+</style>
+
+<script type="application/javascript">
+    $(document).ready(function() {
+
+        document.createElement('column');
+
+        var SimpleListModel = function(rows) {
+            var self = this;
+            self.rows = ko.observableArray(rows);
+            self.itemToAdd = ko.observable('');
+            self.addRow = function() {
+                self.rows.push(new rowModel(self));
+            }.bind(self);
+            self.addRowToStart = function() {
+                self.rows.unshift(new rowModel(self));
+            }.bind(self);
+            self.removeRow = function(row) {
+                self.rows.remove(row);
+            }.bind(self);
+            self.generatedHtml = ko.observable("");
+            self.generatedReact = ko.observable("");
+            self.generateHtml = function() {
+                var clone = $("#genGrid").clone();
+
+                $(clone).find(".row-functions").remove();
+                $(clone).find(".col-functions").remove();
+                $(clone).find(".col").empty();
+                $(clone).find("div").removeAttr("data-bind");
+
+                var htmlString = clone.html();
+                htmlString = $.trim(htmlString);
+                htmlString = htmlString.replace(/ style="width: auto;"/g, "");
+                htmlString = htmlString.replace(/>\s+</g, '>\r\n   <');
+
+                self.generatedHtml(htmlString);
+                self.generateReact();
+            };
+            self.generateReact = function() {
+
+
+                var htmlString = self.generatedHtml();
+                var htmlObject = $(htmlString);
+
+                htmlObject.find('.row').each(function(i, el) {
+                    var element = $(el);
+                    var content = element.html();
+                    $(this).replaceWith("<row>" + content + "</row>");
+                });
+
+                htmlObject.find('.col').each(function(i, el) {
+                    var element = $(el);
+                    var colStart = "    <column"
+                    if (element.hasClass("fixed")) {
+                        colStart += " fixedWidth={" + element.width() + "}";
+                    }
+                    colStart += ">"
+                    var content = element.html();
+                    $(this).replaceWith(colStart + content + "</column>");
+                });
+
+
+                //htmlString = htmlString.replace('<div class="grid borders">', '<Grid borders={true}>');
+                //htmlString = htmlString.replace(/<div class="row" style="height: 250px;">/g, '<Row>');
+                //htmlString = htmlString.replace(/<div class="col">/g, '<Col>');
+
+
+
+                self.generatedReact("<grid>" + htmlObject.html() + "</grid>");
+            }
+        };
+
+        var rowModel = function(parent) {
+            var self = this;
+            self.parentGrid = parent;
+            self.height = ko.observable(250);
+            self.cols = ko.observableArray([new colModel(self)]);
+            self.removeCol = function(col) {
+                self.cols.remove(col);
+                if (this.cols().length === 0) {
+                    this.parentGrid.removeRow(self);
+                }
+            }
+            self.addCol = function() {
+                self.cols.push(new colModel(this));
+            };
+        };
+
+        var colModel = function(parent) {
+            var self = this;
+            self.parentRow = parent;
+            self.fixedWidth = ko.observable();
+            self.cssWidth = ko.computed(function() {
+                var width = parseInt(self.fixedWidth());
+                if (width > 0) {
+                    return width + "px";
+                } else {
+                    return "auto";
+                }
+            });
+            self.type = ko.computed(function() {
+                var width = parseInt(self.fixedWidth());
+                if (width > 0) {
+                    return "fixed";
+                } else {
+                    return "fluid";
+                }
+            });
+        };
+
+        ko.applyBindings(new SimpleListModel([]));
+    });
+
+</script>
+
+
+    <div class="grid fill-container">
+        <div class="row">
+            <div class="col fixed sidebar">
+                <h1>GRIDMASTER</h2>
+                <label>ADD NEW ROW</label>
+                <div class="grid">
+                    <div class="row" data-bind="visible: rows().length >= 1">
+                        <div class="col">
+                             <button class="full-width" data-bind="click: function(){ addRow(); }"><i class="fa fa-caret-down"></i>Add below</button>
+                        </div>
+                        <div class="col">
+                              <button class="full-width" data-bind="click: function(){ addRowToStart(); }"><i class="fa fa-caret-up"></i>Add above</button>
+                        </div>
+                    </div>
+                    <div class="row" data-bind="visible: rows().length < 1">
+                        <div class="col">
+                              <button class="full-width" data-bind="click: function(){ addRowToStart(); }"><i class="fa fa-plus"></i>Add</button>
+                        </div>
+                    </div>
+                </div>
+                <p>Add a new row above or below</p>
+                <label>GENERATION</label>
+                <button class="full-width positive" data-bind="click: function(){ generateHtml(); }"><i class="fa fa-code"></i>Generate HTML</button>
+                <p>Generates some html for you to use</p>
+                <label>HTML</label>
+                <textarea data-bind="text: generatedHtml" readonly></textarea>
+            </div>
+            <div class="col">
+                <div id="genGrid">
+                <div class="grid borders" data-bind="foreach: rows">
+                    <div class="row" data-bind=" style:{ height: height() + 'px' }, foreach: cols">
+                        <span class="row-functions">
+                            <label>Row height</label>
+                            <input class="darkinput" type="number" placeholder="row height" data-bind="value: $parent.height"/>
+                            <button data-bind="click: function(){ $parent.addCol(); }"><i class="fa fa-plus"></i></button>
+                            <button class="negative" data-bind="click: function(){ $parents[1].removeRow($parent); }"><i class="fa fa-times"></i></button>
+                        </span>
+                        <div class="col" data-bind="css: { 'fixed': type() == 'fixed' }, style: { width: cssWidth() }">
+                            <div class="col-functions">
+                                <span data-bind="text: type"></span>
+                                <input class="darkinput" type="number" placeholder="fixed width..." data-bind="value: fixedWidth"/>
+                                <button class="negative" data-bind="click: function(){ $parent.removeCol($data); }"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                 <!-- ko if: rows().length === 0 -->
+                <div class="no-content">
+                    <i class="fa fa-frown-o"></i>
+                    <b>I am very lonely...</b>
+                    <p>There is nothing here yet. Start clicking some buttons to generate a cool grid!</p>
+                </div>
+                <!-- /ko -->
+            </div>
+
+        </div>
+    </div>
