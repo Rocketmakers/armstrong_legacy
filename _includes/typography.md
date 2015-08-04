@@ -3,7 +3,7 @@ Make things a little nicer to read out of the box.
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <h1>An article all about rockets</h1>
 <h2>
     Rockets are relatively lightweight and powerful, capable of generating large accelerations and of attaining <code>extremely high speeds</code> with reasonable efficiency. Rockets are not reliant on the atmosphere and work very well in space.

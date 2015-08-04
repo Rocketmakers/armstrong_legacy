@@ -27,7 +27,7 @@ Add this class to any column you want to be fixed width, along with a width prop
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <div class="grid borders">
   <div class="row">
       <div class="col">

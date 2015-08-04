@@ -3,7 +3,7 @@ Armstrong tidies up and unifies the styling of all popular form elements across 
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <input type="text" placeholder="I am a text input, type in me..."/>
 <select>
   <option>option 1</option>

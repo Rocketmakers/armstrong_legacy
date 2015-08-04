@@ -13,7 +13,7 @@ Puts visible borders around the cells
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <table class="striped">
        <thead>
            <tr>

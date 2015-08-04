@@ -3,7 +3,7 @@ A spinner and a progress bar. Progress bar is indeterminate by default, but just
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <div class="spinner"></div>
 <br/>
 <div class="progress-bar">

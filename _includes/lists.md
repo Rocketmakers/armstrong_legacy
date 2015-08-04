@@ -16,7 +16,7 @@ Adds 20px padding to list items
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <ul class="block-list padded">
   <li class="padded">item</li>
   <li class="padded">item</li>

@@ -11,7 +11,7 @@ This class makes your button red
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <button>Plain button</button>
 <button class="positive">Positive button</button>
 <button class="negative">Negative button</button>

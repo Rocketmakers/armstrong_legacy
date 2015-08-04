@@ -3,7 +3,7 @@ Armstrong also provides some standard ways of laying out forms, because lets fac
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <div class="form">
   <div class="form-row">
     <label>Username</label>

@@ -3,7 +3,7 @@ Navigation is a tricky one, as things can vary massively dependant on your frame
 
 ## Usage example
 #### MARKUP
-```
+``` html
 <nav>
   <a href="#">Home</a>
   <a href="#">About</a>
