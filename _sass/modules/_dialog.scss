@@ -1,0 +1,74 @@
+@import "mixins";
+
+$dialog-header-height: 45px;
+.blackout {
+  position: fixed;
+  height: 0;
+  width: 0;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 255;
+  top: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  @extend %align-center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  &:target {
+    height: 100%;
+    width: 100%;
+    pointer-events: all;
+    opacity: 1;
+    dialog {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  dialog {
+    -webkit-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    transform: scale(0.7);
+    opacity: 0;
+    height: 400px;
+    width: 450px;
+    background-color: white;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 35px rgba(0,0,0,0.3);
+    overflow: hidden;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: attr(data-title);
+      width: 100%;
+      height: $dialog-header-height;
+      line-height: $dialog-header-height;
+      background-color: rgba(0,0,0,0.7);
+      text-align: left;
+      color: white;
+      padding-left: 15px;
+    }
+    .dialog-close-button{
+      text-decoration: none;
+    &:after {
+      font-family: 'Fontawesome';
+      content: '\f00d';
+      font-size: 16pt;
+      position: absolute;
+      right: 0;
+      top: 0;
+      line-height: $dialog-header-height;
+      height: $dialog-header-height;
+      width: $dialog-header-height;
+      background-color: rgba(255,255,255,0.05);
+      color: white;
+      cursor: pointer;
+    }
+  }
+  }
+}

@@ -1,0 +1,30 @@
+@import "settings";
+table {
+  width: 100%;
+  border: 1px solid $theme-color / 2;
+}
+th {
+  background: $theme-color * 1.2;
+  padding: 10px;
+  color: $theme-color / 3;
+  border: 1px solid $theme-color / 1.1;
+  font-weight: normal;
+  text-align: left;
+  color: white;
+}
+td {
+  border: 1px solid $theme-color / 1.1;
+  border-bottom: none;
+  border-top: none;
+  padding: 10px;
+}
+.bordered {
+  td {
+    border: 1px solid $theme-color / 2;
+  }
+}
+.striped {
+  tr:nth-child(odd) {
+    background: rgba(0,0,0,0.1);
+  }
+}

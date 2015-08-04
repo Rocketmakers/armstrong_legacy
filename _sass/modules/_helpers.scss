@@ -1,0 +1,36 @@
+@import "settings";
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.full-width {
+  width: 100%;
+}
+.width-wrapper {
+  width: $fixed-width;
+  max-width: $fixed-width;
+  margin: 0 auto;
+    height: 100%;
+}
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}

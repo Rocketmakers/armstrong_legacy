@@ -1,9 +1,0 @@
-[{
-	title: "msbuild",
-	description: "Build with Visual Studio",
-	link: "http://www.google.com"	
-},{
-	title: "mstest",
-	description: "Run MS tests",
-	link: "http://www.google.com"	
-}]

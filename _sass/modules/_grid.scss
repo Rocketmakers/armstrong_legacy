@@ -1,0 +1,93 @@
+@import "mixins";
+
+.grid {
+  &.fill-container {
+    height: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .row {
+    flex: 1;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    &>div {
+      overflow: hidden;
+    }
+    .col {
+      -ms-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      &.fixed {
+        -ms-flex: none;
+        -webkit-flex: none;
+        flex: none;
+      }
+    }
+  }
+  &.padded {
+    .row > div {
+      padding: 10px;
+    }
+  }
+  &.padded-inner {
+    .row > div {
+      padding: 10px 5px;
+    }
+    .row > div:first-of-type {
+      padding-left: 0;
+      padding-right: 10px;
+    }
+    .row > div:last-of-type {
+      padding-right: 0;
+      padding-left: 10px;
+    }
+    .col12 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &.borders {
+    .row > div {
+      border: 1px solid $theme-color;
+    }
+    .row > div:first-of-type {
+      border-left-width: 2px;
+    }
+    .row > div:last-of-type {
+      border-right-width: 2px;
+    }
+    .row:first-of-type > div {
+      border-top-width: 2px;
+    }
+    .row:last-of-type > div {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.center-vertical {
+        @extend %align-center;
+}
+
+.center-horizonal {
+        text-align: center;
+}
+
+
+.center-both {
+        @extend .center-vertical;
+        @extend .center-horizonal;
+}
+
+
+$grid_column-count: 12;
+@for $i from 1 through $grid_column-count {
+  .col#{$i} {
+    -ms-flex: $i;
+    -webkit-flex: $i;
+    flex: $i;
+  }
+}
