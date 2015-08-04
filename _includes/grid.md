@@ -40,7 +40,7 @@ Add this class to any column you want to be fixed width, along with a width prop
 </div>
 ```
 #### GENERATES
-<div class="example-code">
+<div class="example-code" style="padding-bottom: 15px;">
 <div class="grid borders">
   <div class="row">
       <div class="col">
