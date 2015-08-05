@@ -1,13 +1,6 @@
 @import "mixins";
 
-.grid {
-  &.fill-container {
-    height: 100%;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-  }
+.grid {  
   .row {
     flex: 1;
     display: -ms-flexbox;
@@ -91,3 +84,16 @@ $grid_column-count: 12;
     flex: $i;
   }
 }
+
+.fill-container {
+    height: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+       flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
