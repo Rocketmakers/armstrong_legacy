@@ -21,41 +21,42 @@
     }
   }
   &.padded {
-    .row > div {
+    > .row > div {
       padding: 10px;
     }
   }
   &.padded-inner {
-    .row > div {
+    & > .row > div {
       padding: 10px 5px;
     }
-    .row > div:first-of-type {
+      
+    & > .row > div:first-of-type {
       padding-left: 0;
       padding-right: 10px;
     }
-    .row > div:last-of-type {
+    & > .row > div:last-of-type {
       padding-right: 0;
       padding-left: 10px;
     }
-    .col12 {
+    & > .row .col12 {
       padding-left: 0;
       padding-right: 0;
     }
   }
   &.borders {
-    .row > div {
+    & > .row > div {
       border: 1px solid $theme-color;
     }
-    .row > div:first-of-type {
+    & > .row > div:first-of-type {
       border-left-width: 2px;
     }
-    .row > div:last-of-type {
+    & > .row > div:last-of-type {
       border-right-width: 2px;
     }
-    .row:first-of-type > div {
+    & > .row:first-of-type > div {
       border-top-width: 2px;
     }
-    .row:last-of-type > div {
+    & > .row:last-of-type > div {
       border-bottom-width: 2px;
     }
   }
