@@ -23,7 +23,7 @@
   }
   &.padded {
     & > .row > div {
-      padding: 10px;
+      padding: $padding-size;
     }
   }
   &.padded-inner {
