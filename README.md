@@ -30,7 +30,6 @@ style/
     ├── modules/
     │   ├── _base.scss
     │   ├── _buttons.scss
-    │   ├── _cards.scss
     │   ├── _fonts.scss
     │   ├── _forms.scss
     │   ├── _grid.scss
@@ -56,10 +55,6 @@ The raw essentials for armstrong. I wouldn't reccomend removing this or anything
 #### _buttons.scss
 
 Self explanatory really. Adds some plain sensible cross browser defaults for button controls. This includes button and submit. The out of the box classes are 'positive' and 'negative', which are green and red respectively.
-
-#### _cards.scss
-
-Everything needed for the card layouts.
 
 #### _fonts.scss
 
@@ -125,10 +120,9 @@ To customize Armstrong, you just need to crack open the armstrong.scss file and 
 @import "modules/tables";
 @import "modules/lists";
 @import "modules/buttons";
-@import "modules/cards";
 ```
 
-And here is it configured without tables or cards
+And here is it configured without tables
 
 ```scss
 // REQUIRED IMPORTS
@@ -141,7 +135,6 @@ And here is it configured without tables or cards
 //@import "modules/tables";
 @import "modules/lists";
 @import "modules/buttons";
-//@import "modules/cards";
 ```
 
 Just be sure never to remove the `modules/base`, import or again, you're gonna have a bad time.
