@@ -1,13 +1,7 @@
 @import "mixins";
+@import "settings";
 
-.grid {
-  &.fill-container {
-    height: 100%;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-  }
+.grid {  
   .row {
     flex: 1;
     display: -ms-flexbox;
@@ -28,41 +22,42 @@
     }
   }
   &.padded {
-    .row > div {
-      padding: 10px;
+    & > .row > div {
+      padding: $padding-size;
     }
   }
   &.padded-inner {
-    .row > div {
-      padding: 10px 5px;
+    & > .row > div {
+      padding: $padding-size $padding-size/2;
     }
-    .row > div:first-of-type {
+      
+    & > .row > div:first-of-type {
       padding-left: 0;
-      padding-right: 10px;
+      padding-right: $padding-size;
     }
-    .row > div:last-of-type {
+    & > .row > div:last-of-type {
       padding-right: 0;
-      padding-left: 10px;
+      padding-left: $padding-size;
     }
-    .col12 {
+    & > .row .col12 {
       padding-left: 0;
       padding-right: 0;
     }
   }
   &.borders {
-    .row > div {
+    & > .row > div {
       border: 1px solid $theme-color;
     }
-    .row > div:first-of-type {
+    & > .row > div:first-of-type {
       border-left-width: 2px;
     }
-    .row > div:last-of-type {
+    & > .row > div:last-of-type {
       border-right-width: 2px;
     }
-    .row:first-of-type > div {
+    & > .row:first-of-type > div {
       border-top-width: 2px;
     }
-    .row:last-of-type > div {
+    & > .row:last-of-type > div {
       border-bottom-width: 2px;
     }
   }
@@ -91,3 +86,16 @@ $grid_column-count: 12;
     flex: $i;
   }
 }
+
+.fill-container {
+    height: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+       flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

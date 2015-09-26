@@ -17,7 +17,6 @@
         <file src="source\modules\_forms.scss" target="Content\Content\style\armstrong\modules\_forms.scss" />
         <file src="source\modules\_lists.scss" target="Content\Content\style\armstrong\modules\_lists.scss" />
         <file src="source\modules\_tables.scss" target="Content\Content\style\armstrong\modules\_tables.scss" />
-        <file src="source\modules\_cards.scss" target="Content\Content\style\armstrong\modules\_cards.scss" />
         <file src="source\modules\_typography.scss" target="Content\Content\style\armstrong\modules\_typography.scss" />
         <file src="source\modules\_buttons.scss" target="Content\Content\style\armstrong\modules\_buttons.scss" />
         <file src="source\modules\_grid.scss" target="Content\Content\style\armstrong\modules\_grid.scss" />

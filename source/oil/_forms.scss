@@ -1,0 +1,43 @@
+@import "../modules/settings";
+@import "../modules/mixins";
+
+select,
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);  
+    border: 1px solid $theme-color*1.9;
+    height: 50px;
+}
+
+.compact-form{
+    input:first-of-type{
+     box-shadow: inset 0px 1px 4px rgba(0,0,0,0.2);
+        border-bottom: none;
+    }
+    input:last-of-type{
+     box-shadow: inset 0px -1px 7px rgba(0,0,0,0.2);  
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"],
+{
+   
+    &+label {
+       
+        &:after {
+            border: 1px solid $theme-color*1.9;
+           box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);  
+        }
+    }
+}
+
+.form-row{
+    label{
+        font-size: 9pt;
+        text-transform: uppercase;
+    }
+}
