@@ -1,12 +1,17 @@
 @import "mixins";
 @import "settings";
-
-.grid {  
+.grid {
   .row {
-    flex: 1;
+    display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
     &>div {
       overflow: hidden;
     }
@@ -30,7 +35,6 @@
     & > .row > div {
       padding: $padding-size $padding-size/2;
     }
-      
     & > .row > div:first-of-type {
       padding-left: 0;
       padding-right: $padding-size;
@@ -62,22 +66,16 @@
     }
   }
 }
-
 .center-vertical {
-        @extend %align-center;
+  @extend %align-center;
 }
-
 .center-horizonal {
-        text-align: center;
+  text-align: center;
 }
-
-
 .center-both {
-        @extend .center-vertical;
-        @extend .center-horizonal;
+  @extend .center-vertical;
+  @extend .center-horizonal;
 }
-
-
 $grid_column-count: 12;
 @for $i from 1 through $grid_column-count {
   .col#{$i} {
@@ -86,16 +84,22 @@ $grid_column-count: 12;
     flex: $i;
   }
 }
-
 .fill-container {
-    height: 100%;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-       flex: 1;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  height: 100%;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
