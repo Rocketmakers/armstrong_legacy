@@ -5,8 +5,10 @@ input[type="text"],
 input[type="number"],
 input[type="email"],
 input[type="password"],
-input[type="date"] {
+input[type="date"],
+textarea {
     -webkit-appearance: none;
+    resize: none;
     height: 45px;
     padding: 10px;
     color: $theme-color;
@@ -27,6 +29,9 @@ input[type="date"] {
     &:-ms-input-placeholder {
         color: $placeholder-color;
     }
+}
+textarea{
+    min-height: 135px;
 }
 .form {
     .form-row {
