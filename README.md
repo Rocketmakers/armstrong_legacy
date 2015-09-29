@@ -56,7 +56,7 @@ The raw essentials for armstrong. We wouldn't reccomend removing this or anythin
 
 Self explanatory really. Adds some plain, sensible, cross browser defaults for button controls. This includes button and submit. The out of the box classes are 'positive' and 'negative', which are green and red respectively.
 
-#### \_fonts.scss
+#### _fonts.scss
 
 Overides base font with one from Google Fonts (open sans by default). Change this file for an easy way to change your sites global font.
 

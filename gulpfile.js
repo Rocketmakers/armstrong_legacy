@@ -18,7 +18,6 @@ var structure = rm_core.structure({
 });
 
 var npmPublishPath = path.join(structure.outputBuildPath, "Armstrong");
-console.log("PP", npmPublishPath);
 var version = {
     semver: "0.0.0-unset",
     dotnetversion: "0.0.0.0"
@@ -92,13 +91,18 @@ gulp.task("build", ["version:get", "build:sass"], function() {
     return mergedStreams;
 });
 
+gulp.task("npm:copy:readme.md", ["build"], function(){
+  return gulp.src("readme.md")
+    .pipe(gulp.dest(npmPublishPath));
+});
+
 gulp.task("npm:copy:package.json", ["build"], function(){
   return gulp.src("package.json")
     .pipe(bump({version: version.semver}))
     .pipe(gulp.dest(npmPublishPath));
 });
 
-gulp.task("npm:publish",["npm:copy:package.json"], function(cb){
+gulp.task("npm:publish",["npm:copy:package.json", "npm:copy:readme.md"], function(cb){
   exec("npm pack", {cwd: npmPublishPath},cb)
 });
 

@@ -38,5 +38,6 @@ body.sticky-header, .site.sticky-header {
     position: fixed;
     top: 0;
     z-index: 10;
+    height: $header-height;
   }
 }
